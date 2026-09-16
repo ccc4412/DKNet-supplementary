@@ -1,0 +1,60 @@
+{
+ "n_paired_rows": 300,
+ "precision": {
+  "mean_a": 0.0187,
+  "mean_b": 0.0193,
+  "mean_diff": -0.000667,
+  "bootstrap_diff_ci": {
+   "mean": -0.000667,
+   "ci_low": -0.001667,
+   "ci_high": 0.0,
+   "n": 300,
+   "n_boot": 5000
+  },
+  "wilcoxon": {
+   "statistic": 0,
+   "n_pairs": 2,
+   "p_two_sided": 0.371093,
+   "w_plus": 0,
+   "w_minus": 3.0
+  }
+ },
+ "recall": {
+  "mean_a": 0.1444,
+  "mean_b": 0.1511,
+  "mean_diff": -0.006667,
+  "bootstrap_diff_ci": {
+   "mean": -0.006667,
+   "ci_low": -0.016667,
+   "ci_high": 0.0,
+   "n": 300,
+   "n_boot": 5000
+  },
+  "wilcoxon": {
+   "statistic": 0,
+   "n_pairs": 2,
+   "p_two_sided": 0.371093,
+   "w_plus": 0,
+   "w_minus": 3.0
+  }
+ },
+ "hit": {
+  "mean_a": 0.1867,
+  "mean_b": 0.1933,
+  "mean_diff": -0.006667,
+  "bootstrap_diff_ci": {
+   "mean": -0.006667,
+   "ci_low": -0.016667,
+   "ci_high": 0.0,
+   "n": 300,
+   "n_boot": 5000
+  },
+  "wilcoxon": {
+   "statistic": 0,
+   "n_pairs": 2,
+   "p_two_sided": 0.371093,
+   "w_plus": 0,
+   "w_minus": 3.0
+  }
+ }
+}
