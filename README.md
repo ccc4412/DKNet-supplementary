@@ -7,8 +7,8 @@ This repository is the public data-and-code package accompanying the manuscript 
 
 ## DOI / permanent link
 
-- **Repository URL:** *(fill after first push)*
-- **DOI:** *pending mint (Zenodo/GitHub Release) — replace this line before production*
+- **Repository URL:** https://github.com/ccc4412/DKNet-supplementary
+- **DOI:** *pending mint (optional Zenodo / GitHub Release) — replace this line when available*
 
 ## Contents
 
