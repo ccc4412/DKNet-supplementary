@@ -8,12 +8,18 @@ This repository is the public data-and-code package accompanying the manuscript 
 ## DOI / permanent link
 
 - **Repository URL:** https://github.com/ccc4412/DKNet-supplementary
-- **DOI:** *pending mint (optional Zenodo / GitHub Release) — replace this line when available*
+- **Archived snapshot (this version):** https://doi.org/10.5281/zenodo.24221470
+- **All versions (concept DOI):** https://doi.org/10.5281/zenodo.24221469
 
 ## Contents
 
 | Path | Description |
 |------|-------------|
+| `data/generate_datasets.py` | D1/D2 synthetic corpora generator (defaults 150,000 / 50,000 records, seed 42) |
+| `src/` | DKNet implementation (temporal KG, LLM candidates, adaptive fusion, MMR, contrastive learning, metrics, baselines) |
+| `experiments/` | Experiment runner and visualization scripts |
+| `config.yaml`, `requirements.txt` | Runner hyper-parameters and dependencies |
+| `scripts/` | MicroBlogPCU proxy runners (context/checkpoint ablations) |
 | `supporting_information/S1_baseline_deviations.md` | Chinese adaptation deviations (HASHET-zh / H-ADAPTS-zh) |
 | `supporting_information/S2_proxy_metrics.md` | MicroBlogPCU weak-label proxy metrics (n=5 seeds for hashtag baselines) |
 | `supporting_information/S3_*.md` / `S3_*.json` | Bootstrap CIs, Wilcoxon signed-rank outputs, multi-seed summary |
@@ -21,6 +27,7 @@ This repository is the public data-and-code package accompanying the manuscript 
 | `baselines/zh/` | Runnable Chinese adaptations and unified evaluation scripts |
 | `aggregate/aggregate_5seeds.json` | 5-seed mean±std for HASHET-zh / H-ADAPTS-zh |
 | `upstream_refs/` | Notes on official HASHET / H-ADAPTS repositories |
+| `DEPOSIT_NOTES.md` | Deposit contents and regeneration instructions |
 
 Official upstream projects (please cite the original papers if you use those methods):
 
