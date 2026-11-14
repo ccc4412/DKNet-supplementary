@@ -1,0 +1,117 @@
+# DKNet 实验配置文件
+
+# 数据配置
+data:
+  # D1: 微博时序数据
+  d1:
+    enabled: true
+    data_path: "data/datasets/d1_weibo_temporal.json"
+    time_window: 24  # 小时
+    max_text_length: 500
+    min_text_length: 20
+    
+  # D2: 新闻门户数据
+  d2:
+    enabled: true
+    data_path: "data/datasets/d2_news_portal.json"
+    train_years: [2019, 2020, 2021, 2022]
+    test_year: 2023
+    
+  # 原始数据配置（保留备用）
+  weibo:
+    data_path: "data/weibo_2023_topic.json"
+    time_window: 24  # 小时
+    max_text_length: 500
+    min_text_length: 20
+    
+  news:
+    data_path: "data/news_cn_temporal.json"
+    train_years: [2019, 2020, 2021, 2022]
+    test_year: 2023
+    
+  # 预处理
+  preprocessing:
+    remove_duplicates: true
+    duplicate_threshold: 0.9
+    filter_noise: true
+    
+# 模型配置
+model:
+  # LLM配置
+  llm:
+    model_name: "bert-base-chinese"
+    max_length: 512
+    batch_size: 32
+    device: "cuda"
+    
+  # 知识图谱配置
+  kg:
+    node_types: ["entity", "concept", "topic", "event"]
+    edge_types: ["co_occur", "temporal", "semantic", "synonym"]
+    time_decay_factor: 24  # tau参数
+    centrality_method: "pagerank"
+    
+  # 自适应权重配置
+  adaptive:
+    alpha_init: 0.5
+    beta: 10
+    bias: 0
+    drift_threshold: 0.1
+    
+  # MMR配置
+  mmr:
+    lambda_diversity: 0.7
+    top_k: 10
+    similarity_metric: "cosine"
+
+# 实验配置
+experiment:
+  # 评估指标
+  metrics: ["precision", "recall", "f1", "diversity", "timeliness"]
+  k_values: [5, 10, 15, 20]
+  
+  # 评估配置
+  evaluation:
+    k_values: [5, 10, 15, 20]
+    metrics: ["precision", "recall", "f1", "diversity", "timeliness"]
+    cross_validation: false
+    test_split: 0.2
+  
+  # 基线方法
+  baselines:
+    - "tfidf"
+    - "textrank"
+    - "positionrank"
+    - "rake"
+    - "yake"
+    - "keybert"
+    - "sifrank"
+    - "lda"
+    - "bertopic"
+    - "dtm"
+    - "prompt_llm"
+    - "only_kg"
+    - "static_kg"
+    
+  # 消融研究
+  ablation:
+    - "full"  # 完整模型
+    - "wo_time"  # 无时间感知
+    - "wo_adapt"  # 无自适应权重
+    - "wo_mmr"  # 无MMR
+    
+  # 统计显著性
+  significance:
+    test_method: "paired_t_test"
+    alpha: 0.05
+    correction: "bonferroni"
+    
+# 输出配置
+output:
+  results_dir: "results"
+  figures_dir: "figures"
+  logs_dir: "logs"
+  save_models: true
+  
+# 随机种子
+seed: 42
